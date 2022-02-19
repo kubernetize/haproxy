@@ -8,4 +8,4 @@ RUN adduser -h /var/lib/haproxy -s /bin/false -D -H -u 18521 haproxy && \
 
 USER 18521
 
-CMD ["/usr/sbin/haproxy", "-W", "-f", "/etc/haproxy/haproxy.cfg", "-p", "/tmp/haproxy.pid"]
+CMD ["/usr/sbin/haproxy", "-f", "/etc/haproxy/haproxy.cfg", "-p", "/tmp/haproxy.pid"]
