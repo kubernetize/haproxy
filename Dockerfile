@@ -1,6 +1,10 @@
-FROM alpine:3.15
+FROM alpine:3.15.3
 
-RUN adduser -h /var/lib/haproxy -s /bin/false -D -H -u 18521 haproxy && \
+LABEL org.opencontainers.image.authors "Richard Kojedzinszky <richard@kojedz.in>"
+LABEL org.opencontainers.image.source https://github.com/kubernetize/haproxy
+
+RUN \
+    adduser -h /var/lib/haproxy -s /bin/false -D -H -u 18521 haproxy && \
     apk --no-cache add haproxy libcap && \
     setcap cap_net_bind_service,cap_sys_chroot+ep /usr/sbin/haproxy && \
     apk --no-cache del libcap && \
