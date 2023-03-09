@@ -1,7 +1,6 @@
-FROM alpine:3.15.3
+FROM alpine:3.17.2
 
-LABEL org.opencontainers.image.authors "Richard Kojedzinszky <richard@kojedz.in>"
-LABEL org.opencontainers.image.source https://github.com/kubernetize/haproxy
+LABEL org.opencontainers.image.authors="Richard Kojedzinszky <richard@kojedz.in>"
 
 RUN \
     adduser -h /var/lib/haproxy -s /bin/false -D -H -u 18521 haproxy && \
