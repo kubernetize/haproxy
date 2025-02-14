@@ -4,9 +4,7 @@ LABEL org.opencontainers.image.authors="Richard Kojedzinszky <richard@kojedz.in>
 
 RUN \
     adduser -h /var/lib/haproxy -s /bin/false -D -H -u 18521 haproxy && \
-    apk --no-cache add haproxy libcap && \
-    setcap cap_net_bind_service,cap_sys_chroot+ep /usr/sbin/haproxy && \
-    apk --no-cache del libcap && \
+    apk --no-cache add haproxy && \
     chown haproxy: /var/lib/haproxy
 
 USER 18521
